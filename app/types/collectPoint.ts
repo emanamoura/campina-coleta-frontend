@@ -1,7 +1,7 @@
 type ISOSDateString = string;
 
 export interface CollectPoint {
-  id: number;
+  id?: number;
   name: string;
   embedCode: string;
   openAt: ISOSDateString;
