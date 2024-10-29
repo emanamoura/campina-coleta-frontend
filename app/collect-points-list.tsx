@@ -3,9 +3,9 @@ import CollectPointCard from "./collect-card";
 import Header from "./components/Header";
 import { CollectPoint } from "./types/collectPoint";
 
-const CollectPointsList = async () => {
-    const collectPoints: CollectPoint[] = await CampinaColetaClient.getInstance().getCollectPoints();
-    
+const CollectPointsList = async ({ name }: { name?: string }) => {
+  const collectPoints: CollectPoint[] = await CampinaColetaClient.getInstance().getCollectPoints(name);
+  
   return (
     <div className="container mx-auto p-6 bg-gray-100">
       <Header />

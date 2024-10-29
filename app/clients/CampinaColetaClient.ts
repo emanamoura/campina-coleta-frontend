@@ -14,21 +14,28 @@ class CampinaColetaClient {
         return CampinaColetaClient.instance;
     }
 
-    async getCollectPoints(): Promise<CollectPoint[]> {
+    async getCollectPoints(name?: string): Promise<CollectPoint[]> {
         try {
-            const response = await fetch(this.url, { cache: 'no-store' });
-            console.log('response', response)
+
+            const query = name ? `?name=${encodeURIComponent(name)}` : '';
+            const response = await fetch(`${this.url}${query}`, { cache: 'no-store' });
+
+            console.log('response', response);
+
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
+
             const data = await response.json();
-            console.log('data', data)
+            console.log('data', data);
+
             return data as CollectPoint[];
         } catch (error) {
             console.error("Failed to fetch collect points:", error);
-            throw error; // or handle it as you see fit
+            throw error;
         }
     }
+
 
     async createCollectPoint(point: CollectPoint): Promise<CollectPoint> {
         try {
