@@ -1,6 +1,7 @@
 // pages/index.js
 import Head from 'next/head';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Home() {
   const currentYear = new Date().getFullYear();
@@ -16,10 +17,22 @@ export default function Home() {
       <main className="flex-grow">
         <section className="flex items-center justify-between p-10 bg-green-100 rounded-b-lg shadow-md">
           <div className="max-w-xl">
-            <h1 className="text-4xl font-bold text-green-800">Campina Coleta</h1>
+            <Link href='/'>
+              <h1 className="text-4xl font-bold text-green-800">Campina Coleta</h1>
+            </Link>
+
             <p className="mt-4 text-lg text-green-600">
               Juntos, estamos fazendo a diferença! A cada coleta, ajudamos a transformar nossa cidade em um lugar mais limpo e sustentável.
             </p>
+            <Link href='/points'>
+              <button
+                className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors"
+
+              >
+                Veja agora os pontos de coleta !
+              </button>
+
+            </Link>
           </div>
           <Image src="/campina_coleta.jpg" alt="Campina Coleta" width={400} height={400} className="rounded-lg shadow-lg" />
         </section>
@@ -27,8 +40,8 @@ export default function Home() {
         <section className="py-12 px-8 bg-white">
           <h2 className="text-3xl font-bold text-green-800">A Importância da Coleta de Lixo</h2>
           <p className="mt-4 text-lg text-gray-700">
-            A coleta de lixo é essencial para manter nossas ruas limpas, proteger o meio ambiente e promover a saúde pública. 
-            Ao participarmos da coleta, contribuímos para um futuro mais verde e sustentável. 
+            A coleta de lixo é essencial para manter nossas ruas limpas, proteger o meio ambiente e promover a saúde pública.
+            Ao participarmos da coleta, contribuímos para um futuro mais verde e sustentável.
             Ações de conscientização e participação ativa são fundamentais para garantir um ambiente mais saudável para todos.
           </p>
         </section>

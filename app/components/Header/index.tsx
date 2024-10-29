@@ -5,6 +5,7 @@ import { useDisclosure } from '@mantine/hooks';
 import { Modal, Button, TextInput, Textarea, NumberInput } from '@mantine/core';
 import { TimeInput } from '@mantine/dates';
 import CampinaColetaClient from '@/app/clients/CampinaColetaClient';
+import Link from 'next/link';
 
 
 function Header() {
@@ -42,12 +43,14 @@ function Header() {
     return (
         <>
             <header className="flex justify-between items-center mb-6">
-                <h1 className="text-2xl font-bold text-green-800">Campina Coleta</h1>
+                <Link href='/'>
+                    <h1 className="text-4xl font-bold text-green-800">Campina Coleta</h1>
+                </Link>
                 <button
                     className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 transition-colors"
                     onClick={onCreateNewColeta}
                 >
-                    Criar Nova Coleta
+                    Novo ponto de coleta
                 </button>
             </header>
 

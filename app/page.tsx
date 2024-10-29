@@ -10,7 +10,7 @@ export default function Index() {
   return (
     <MantineProvider>
       <Home/>
-      <CollectPointsList />
+      
     </MantineProvider>
     
   )
