@@ -64,7 +64,7 @@ export default function Home() {
               }
             ].map((testimonial, index) => (
               <div key={index} className="p-6 bg-white border-l-4 border-green-500 shadow rounded-lg transition-transform transform hover:scale-105">
-                <p className="text-lg text-green-600">"{testimonial.text}"</p>
+                <p className="text-lg text-green-600">&quot;{testimonial.text}&quot;</p>
                 <cite className="text-green-500">- {testimonial.author}</cite>
               </div>
             ))}
